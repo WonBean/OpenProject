@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd">
+
+	<!-- 빈(객체) 등록하고, 관계설정(의존설정) : 생성, 반환, 삭제 설정하는 설정파일 -->
+
+
+	<context:annotation-config />
+
+
+	<!-- Dao 클래서 등록 -->
+	<bean id="jdbcDao" class="member.dao.JdbcDao"></bean>
+	<bean id="mybatisDao" class="member.dao.MybatisDao">
+		<qualifier value="newDao" />
+	</bean>
+	<bean id="daos" class="member.dao.MemberDao"></bean>
+
+	<!-- <bean id="memberRegSvc" class="member.service.MemberRegService"> 생성자 
+		방식의 의존 주입 <constructor-arg > <ref bean="jdbcDao"/> </constructor-arg> </bean> -->
+
+	<bean id="memberRegSvc" class="member.service.MemberRegService"></bean>
+
+	<!-- <bean id="membeDeleteSvc" class="member.service.MemberDeleteService"> 
+		프로퍼티 방식의 의존 주입 <property name="dao"> <ref bean="mybatisDao"/> </property> 
+		</bean> -->
+
+	<!-- <bean id="membeDeleteSvc" class="member.service.MemberDeleteService" 
+		p:dao-ref="mybatisDao" /> -->
+
+	<!-- <bean id="membeDeleteSvc" class="member.service.MemberDeleteService" 
+		autowire="byName" scope="prototype"></bean> -->
+
+	<bean id="membeDeleteSvc"
+		class="member.service.MemberDeleteService"></bean>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</beans>
