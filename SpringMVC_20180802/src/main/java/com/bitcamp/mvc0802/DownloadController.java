@@ -17,7 +17,7 @@ public class DownloadController implements ApplicationContextAware {
 	
 	@RequestMapping("/file")
 	public ModelAndView download() {		
-		return new ModelAndView("download", "downloadFile", getFile());
+		return new ModelAndView("download", "downloadFile", getFile()); 
 	}
 	
 	private File getFile() {
