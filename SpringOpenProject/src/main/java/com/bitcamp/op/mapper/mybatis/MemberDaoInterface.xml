@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bitcamp.op.member.dao.MemberDaoInterface">
+
+	<select id="selectById"
+		resultType="com.bitcamp.op.member.model.MemberVo">
+		Select * from member where memberId=#{id}
+	</select>
+
+	<insert id="insertMember"
+		parameterType="com.bitcamp.op.member.model.MemberVo">
+		insert into member
+		(mIdx, memberId, memberPassword, memberPhoto, memberName )
+		values (member_seq.nextval, #{memberId}, #{memberPassword},
+		#{memberPhoto},
+		#{memberName})
+
+	</insert>
+</mapper>
