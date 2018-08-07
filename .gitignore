@@ -2,7 +2,6 @@
 
 ### Java ###
 # Compiled class file
-*.class
 
 # Log file
 *.log
@@ -14,7 +13,6 @@
 .mtj.tmp/
 
 # Package Files #
-*.jar
 *.war
 *.nar
 *.ear
@@ -33,11 +31,7 @@ target/
 *.asp
 *.cer
 *.csr
-*.css
 *.htm
-*.html
-*.js
-*.jsp
 *.php
 *.rss
 *.xhtml
